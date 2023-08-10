@@ -35,11 +35,11 @@ Frontend (Angular):
 
 Estructura del Repositorio:
 
-tu-repositorio/
-|-- backend/               # Código fuente del backend (PHP Laravel)
-|-- frontend/              # Código fuente del frontend (Angular)
-|-- database/              # Migraciones y semillas de la base de datos
-|-- README.md              # Información sobre el repositorio
+UITEC-TechnicalTest/
+|-- backend/                # Código fuente del backend (PHP Laravel)
+|-- frontend/               # Código fuente del frontend (Angular)
+|-- database/               # Migraciones y semillas de la base de datos
+|-- README.md               # Información sobre el repositorio
 
 Notas Adicionales:
 
