@@ -1,4 +1,4 @@
-Title: Monorepo CRUD with PHP Laravel and Angular Frontend
+#Monorepo CRUD with PHP Laravel and Angular Frontend
 
 Description: This repository contains a monorepo that implements a CRUD (Create, Read, Update, Delete) system using PHP Laravel for the backend and Angular for the frontend. The interface utilizes Tailwind CSS for layout and Flowbite for certain modals and interactive components. Additionally, PostgreSQL is integrated as the database. This application demonstrates how to manage records through a modern and appealing interface.
 
