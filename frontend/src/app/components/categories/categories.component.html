@@ -1,0 +1,61 @@
+<div class="grid w-full md:m-10 justify-center lg:max-w-[1280px] sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 grid-row-4  gap-4 p-4 ">
+   
+    <div *ngFor="let category of categories; let i = index" class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+        <!-- Contenido cuando no está en modo edición -->
+        <ng-template [ngIf]="!category.editing">
+          <a href="#">
+            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-700 dark:text-gray-400">Category: {{category.name}}</h5>
+          </a>
+          <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">description: {{category.description}}</p>
+          <div *ngIf="!category.showConfirmation" class="flex gap-2">
+            <a (click)="onEdit(i)" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+              Editar
+            </a>
+            <a (click)="onDeleteConfirmation(i)" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-red-700 rounded-lg hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">
+              Eliminar
+            </a>
+          </div>
+        </ng-template>
+      
+        <!-- Contenido cuando está en modo edición -->
+        <ng-template [ngIf]="category.editing">
+          <form [formGroup]="editForms[i]" class="flex justify-center flex-col">
+            <input formControlName="name" class="mb-2 text-lg rounded-lg font-bold tracking-tight bg-gray-50 border border-gray-300 text-gray-900 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" />
+            <textarea formControlName="description" class="mb-3 font-normal rounded-lg bg-gray-50 border border-gray-300 text-gray-900 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"></textarea>
+            <div class="flex gap-2">
+              <a (click)="onSave(i)" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                Guardar
+              </a>
+              <a (click)="onCancel(i)" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-gray-500 rounded-lg hover:bg-gray-600 focus:ring-4 focus:outline-none focus:ring-gray-300 dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
+                Cancelar
+              </a>
+            </div>
+          </form>
+        </ng-template>
+      
+        <!-- Mensaje de confirmación -->
+        <ng-template [ngIf]="category.showConfirmation">
+          <div class="mt-2 text-red-600 font-medium relative dark:bg-gray-800 dark:border-gray-700">¿Estás seguro que quieres eliminar esta categoría?</div>
+          <div class="flex gap-2 mt-2">
+            <a (click)="onDelete(i)" class="block items-center px-3 py-2 text-sm font-medium text-center text-white bg-red-700 rounded-lg hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">
+              Sí, eliminar
+            </a>
+            <a (click)="onCancelDelete(i)" class="block items-center px-3 py-2 text-sm font-medium text-center text-white bg-gray-500 rounded-lg hover:bg-gray-600 focus:ring-4 focus:outline-none focus:ring-gray-300 dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
+              Cancelar
+            </a>
+          </div>
+        </ng-template>
+    </div>
+      
+    
+      
+  
+</div>
+<div class="flex justify-center">
+    <button (click)="toggleModal()"
+      class="flex justify-center items-center  px-5 py-5 sm:px-0  rounded-lg sm:rounded-2xl fixed  bottom-0 w-[300px] sm:w-[200px]    sm:bottom-10 sm:right-10 font-medium  text-xl  text-center bg-slate-900 text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300"
+      type="button">
+      Create Category
+    </button>
+</div>
+<app-category-modal *ngIf="showModal" ></app-category-modal>

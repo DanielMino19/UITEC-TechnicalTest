@@ -1,0 +1,19 @@
+<!-- Modal toggle -->
+<app-product-modal (getAllProductsEvent)="getAllProducts()"></app-product-modal>
+<app-update-product-modal  *ngIf="showModal" (getAllProductsEvent)="getAllProducts()"></app-update-product-modal>
+<div class="grid w-full mx-auto justify-center  lg:max-w-[1280px] sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4  grid-row-4  gap-4 p-4 " >
+    <app-product-card *ngFor="let item of products" (getAllProductsEvent)="getAllProducts()" [product]="item"></app-product-card>
+    
+<!-- Main modal -->
+
+
+
+    <div class="flex justify-center">
+      <button data-modal-target="createProduct-modal" data-modal-toggle="createProduct-modal"
+        class="flex justify-center items-center  px-5 py-5 sm:px-0  rounded-lg sm:rounded-2xl fixed  bottom-0 w-[300px] sm:w-[200px]    sm:bottom-10 sm:right-10 font-medium  text-xl  text-center bg-slate-900 text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300"
+        type="button">
+        Create Product
+      </button>
+    </div>
+</div>
+
