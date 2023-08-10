@@ -6,7 +6,7 @@ Instrucciones de Uso:
 
     Clonar el Repositorio:
     git clone https://github.com/tu-usuario/tu-repositorio.git
-    cd tu-repositorio
+    cd  UITEC-TechnicalTest
     
 
 Configuración de la Base de Datos:
