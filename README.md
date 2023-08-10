@@ -1,7 +1,6 @@
 # Monorepo CRUD con PHP Laravel y Frontend Angular
 
-Este repositorio contiene un monorepo que implementa un sistema CRUD (Crear, Leer, Actualizar, Eliminar) utilizando PHP Laravel para el backend y Angular para el frontend.
-Además, utiliza PostgreSQL como base de datos. Esta aplicación muestra cómo crear, leer, actualizar y eliminar registros a través de una interfaz web moderna.
+ Este repositorio contiene un monorepo que implementa un sistema CRUD (Crear, Leer, Actualizar, Eliminar) utilizando PHP Laravel para el backend y Angular para el frontend. La interfaz utiliza Tailwind CSS para la maquetación y Flowbite para ciertos modales y componentes interactivos. Además, se integra PostgreSQL como base de datos. Esta aplicación muestra cómo gestionar registros a través de una interfaz moderna y atractiva.
 
 Instrucciones de Uso:
 
