@@ -6,11 +6,9 @@ Además, utiliza PostgreSQL como base de datos. Esta aplicación muestra cómo c
 Instrucciones de Uso:
 
     Clonar el Repositorio:
-
-    bash
-
-git clone https://github.com/tu-usuario/tu-repositorio.git
-cd tu-repositorio
+    git clone https://github.com/tu-usuario/tu-repositorio.git
+    cd tu-repositorio
+    
 
 Configuración de la Base de Datos:
 
